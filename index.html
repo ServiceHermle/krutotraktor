@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover" />
-  <title>HDH CODE – Pro (v2.7.9 Soft Secure)</title>
+  <title>HDH CODE – Pro (v2.8.0 Soft Secure)</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#f7f7f9">
   <link rel="apple-touch-icon" href="icon-192.png">
@@ -25,7 +25,7 @@
     .btn.primary { background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:#fff; border:none; }
     .actions, .bar { display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:10px; }
     .list { margin-top:12px; border:1px solid var(--border); border-radius:16px; overflow:hidden; }
-    .row-item { display:grid; grid-template-columns: 1fr auto auto; gap:8px; align-items:center; padding:12px; border-top:1px solid var(--border); }
+    .row-item { display:grid; grid-template-columns: 1 fr auto auto; gap:8px; align-items:center; padding:12px; border-top:1px solid var(--border); }
     .row-item:first-child { border-top:none; }
     .label { font-weight:900; color:#b91c1c; letter-spacing:.2px; }
     .value { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:1.3rem; }
@@ -61,17 +61,17 @@
         <label style="display:flex; align-items:center; gap:8px; font-weight:700"><input type="checkbox" id="remember"> Zapamatovat zařízení</label>
       </div>
       <div class="btnrow">
-        <button class="btn primary" id="unlockBtn">Odemknout</button>
+        <button class="btn primary" id="unlockBtn" type="button">Odemknout</button>
       </div>
     </div>
   </div>
 
   <div id="app" class="wrap hidden">
     <div class="tabs">
-      <button class="tab active" data-tab="single">Výpočet</button>
-      <button class="tab" data-tab="range">Období</button>
-      <button class="tab" data-tab="clients">Zákazníci</button>
-      <button class="tab" data-tab="settings">Nastavení</button>
+      <button class="tab active" data-tab="single" type="button">Výpočet</button>
+      <button class="tab" data-tab="range" type="button">Období</button>
+      <button class="tab" data-tab="clients" type="button">Zákazníci</button>
+      <button class="tab" data-tab="settings" type="button">Nastavení</button>
     </div>
 
     <!-- SINGLE -->
@@ -89,31 +89,31 @@
       </div>
 
       <div class="actions">
-        <button class="btn" id="recalc">Přepočítat</button>
-        <button class="btn" id="todayBtn">Dnes</button>
+        <button class="btn" id="recalc" type="button">Přepočítat</button>
+        <button class="btn" id="todayBtn" type="button">Dnes</button>
       </div>
 
       <div class="list">
         <div class="row-item">
           <div class="label">MP Access</div>
           <div class="value" id="mpAccess" contenteditable="false">–</div>
-          <button class="copy" data-copy="#mpAccess">Kopírovat</button>
+          <button class="copy" data-copy="#mpAccess" type="button">Kopírovat</button>
         </div>
         <div class="row-item">
           <div class="label">MP Acceptance</div>
           <div class="value" id="mpAcceptance" contenteditable="false">–</div>
-          <button class="copy" data-copy="#mpAcceptance">Kopírovat</button>
+          <button class="copy" data-copy="#mpAcceptance" type="button">Kopírovat</button>
         </div>
         <div class="row-item">
           <div class="label">PLC Access</div>
           <div class="value" id="plcAccess" contenteditable="false">–</div>
-          <button class="copy" data-copy="#plcAccess">Kopírovat</button>
+          <button class="copy" data-copy="#plcAccess" type="button">Kopírovat</button>
         </div>
       </div>
 
       <div class="bar">
-        <button class="btn" id="copyAll">Kopírovat vše</button>
-        <button class="btn primary" id="shareAll">Sdílet</button>
+        <button class="btn" id="copyAll" type="button">Kopírovat vše</button>
+        <button class="btn primary" id="shareAll" type="button">Sdílet</button>
       </div>
 
       <div class="footer">Použití a sdílení mimo společnost Hermle je přísně zakázáno.</div>
@@ -128,10 +128,10 @@
         <div class="col"><label>Do</label><input id="r-to" type="date" value="2025-11-07"></div>
       </div>
       <div class="actions" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
-        <button class="btn" id="r-gen">Vygenerovat</button>
-        <button class="btn" id="r-week-prev">◀ Předchozí týden</button>
-        <button class="btn" id="r-week-next">Následující týden ▶</button>
-        <button class="btn primary" id="r-print">Tisk / PDF</button>
+        <button class="btn" id="r-gen" type="button">Vygenerovat</button>
+        <button class="btn" id="r-week-prev" type="button">◀ Předchozí týden</button>
+        <button class="btn" id="r-week-next" type="button">Následující týden ▶</button>
+        <button class="btn primary" id="r-print" type="button">Tisk / PDF</button>
       </div>
       <div style="overflow:auto; margin-top:10px">
         <table id="r-table" style="width:100%; border-collapse:collapse">
@@ -149,8 +149,8 @@
       <div class="row">
         <div class="col"><label>Vyhledávání</label><input id="c-search" type="text" inputmode="search" placeholder="Hledat zákazníka nebo N…"></div>
         <div class="col" style="display:flex; align-items:flex-end; gap:8px; flex-wrap:wrap">
-          <button class="btn inline" id="c-add">+ Přidat</button>
-          <button class="btn inline" id="c-export">Export (JSON)</button>
+          <button class="btn inline" id="c-add" type="button">+ Přidat</button>
+          <button class="btn inline" id="c-export" type="button">Export (JSON)</button>
           <label class="btn inline" for="c-import-file" style="cursor:pointer">Import (JSON)</label>
           <input id="c-import-file" type="file" accept="application/json" style="display:none">
         </div>
@@ -161,8 +161,8 @@
           <div class="modal-h" id="dlg-title">Upravit</div>
           <div class="modal-b" id="dlg-body"></div>
           <div class="modal-f">
-            <button value="cancel" class="btn">Zavřít</button>
-            <button id="dlg-save" class="btn primary">Uložit</button>
+            <button value="cancel" class="btn" type="button" onclick="this.closest('dialog').close()">Zavřít</button>
+            <button id="dlg-save" class="btn primary" type="button">Uložit</button>
           </div>
         </form>
       </dialog>
@@ -172,12 +172,12 @@
     <div id="panel-settings" class="card hidden">
       <div class="logo" style="margin-top:2px"><img src="data:image/png;base64,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" alt="Hermle" style="width:120px"></div>
       <div class="sec">
-        <button class="btn primary" id="pin-gen">Vytvořit 24 h PIN</button>
-        <button class="btn" id="pin-revoke">Zrušit PIN</button>
+        <button class="btn primary" id="pin-gen" type="button">Vytvořit 24 h PIN</button>
+        <button class="btn" id="pin-revoke" type="button">Zrušit PIN</button>
       </div>
       <div id="pin-info" class="muted" style="margin-top:8px"></div>
       <div class="sec" style="margin-top:14px; grid-template-columns: 1fr;">
-        <button class="btn" id="logoutBtn">Odhlásit</button>
+        <button class="btn" id="logoutBtn" type="button">Odhlásit</button>
       </div>
     </div>
 
@@ -193,8 +193,8 @@
         <div id="pinExp" style="text-align:center; margin-top:6px" class="muted"></div>
       </div>
       <div class="modal-f">
-        <button id="pinCopy" class="btn">Kopírovat</button>
-        <button id="pinClose" class="btn primary">OK</button>
+        <button id="pinCopy" class="btn" type="button">Kopírovat</button>
+        <button id="pinClose" class="btn primary" type="button" onclick="this.closest('dialog').close()">OK</button>
       </div>
     </div>
   </dialog>
@@ -207,8 +207,8 @@
         <label style="display:flex; align-items:center; gap:8px; font-weight:700; margin-top:8px"><input type="checkbox" id="revokePinOnLogout"> Zrušit aktuální PIN</label>
       </div>
       <div class="modal-f">
-        <button value="cancel" class="btn">Zpět</button>
-        <button id="logoutConfirm" class="btn primary">Odhlásit</button>
+        <button value="cancel" class="btn" type="button" onclick="this.closest('dialog').close()">Zpět</button>
+        <button id="logoutConfirm" class="btn primary" type="button">Odhlásit</button>
       </div>
     </form>
   </dialog>
@@ -217,19 +217,29 @@
 let refreshed = false;
 navigator.serviceWorker && navigator.serviceWorker.addEventListener('controllerchange', () => { if (refreshed) return; refreshed = true; location.reload(); });
 
+// Storage abstraction
+const MemDB = (()=>{ const store={}; return { getItem:k=>store.hasOwnProperty(k)?store[k]:null, setItem:(k,v)=>{store[k]=String(v)}, removeItem:k=>{delete store[k]} }; })();
+function canUseLocal(){ try{ const k='__t'+Math.random(); localStorage.setItem(k,'1'); localStorage.removeItem(k); return true; }catch(e){ return false; } }
+function canUseSession(){ try{ const k='__t'+Math.random(); sessionStorage.setItem(k,'1'); sessionStorage.removeItem(k); return true; }catch(e){ return false; } }
+const Store = (()=>{
+  if (typeof localStorage!=='undefined' && canUseLocal()) return localStorage;
+  if (typeof sessionStorage!=='undefined' && canUseSession()) return sessionStorage;
+  return MemDB;
+})();
+
 const LS_KEYS = { pinHash: 'hdh_temp_pin_hash', pinExp: 'hdh_temp_pin_exp', ownerDev: 'hdh_owner_device', customers: 'hdh-customers-v1' };
 const SS_KEYS = { ownerSession: 'hdh_owner_session' };
 
 const SECURITY = { ownerHash: "8d385da1625301853c57735868f8074156322477e00548d10843674d7e095253", tempPinHash: null, tempPinExpires: 0, lsDeviceKey: LS_KEYS.ownerDev };
 
-(function loadStoredPin(){ try{ SECURITY.tempPinHash = localStorage.getItem(LS_KEYS.pinHash); SECURITY.tempPinExpires = parseInt(localStorage.getItem(LS_KEYS.pinExp)||'0',10) || 0; }catch(e){ SECURITY.tempPinHash=null; SECURITY.tempPinExpires=0; } })();
+(function loadStoredPin(){ try{ SECURITY.tempPinHash = Store.getItem(LS_KEYS.pinHash); SECURITY.tempPinExpires = parseInt(Store.getItem(LS_KEYS.pinExp)||'0',10) || 0; }catch(e){ SECURITY.tempPinHash=null; SECURITY.tempPinExpires=0; } })();
 
 async function sha256Hex(s) { const enc = new TextEncoder().encode(s); const buf = await crypto.subtle.digest('SHA-256', enc); return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join(''); }
 
 function uiShowApp(){ document.getElementById('lock').classList.add('hidden'); document.getElementById('app').classList.remove('hidden'); updatePinInfo(); }
 function uiShowLock(){ document.getElementById('app').classList.add('hidden'); document.getElementById('lock').classList.remove('hidden'); }
 
-async function tryAutoUnlock(){ const saved = localStorage.getItem(SECURITY.lsDeviceKey); if(saved && (saved === SECURITY.ownerHash)) { uiShowApp(); return true; } return false; }
+async function tryAutoUnlock(){ const saved = Store.getItem(SECURITY.lsDeviceKey); if(saved && (saved === SECURITY.ownerHash)) { uiShowApp(); return true; } return false; }
 
 async function unlockFlow(){ 
   const pass = document.getElementById('pass').value; if(!pass) { toast('Zadejte kód'); return; } 
@@ -238,7 +248,7 @@ async function unlockFlow(){
   const ownerOk = (h === SECURITY.ownerHash);
   if(ownerOk || pinOk) { 
     if(ownerOk) { try{ sessionStorage.setItem(SS_KEYS.ownerSession, '1'); }catch(e){} }
-    if(document.getElementById('remember').checked && ownerOk) { localStorage.setItem(SECURITY.lsDeviceKey, h); }
+    if(document.getElementById('remember').checked && ownerOk) { Store.setItem(SECURITY.lsDeviceKey, h); }
     uiShowApp(); 
   } else { toast('Neplatný kód'); }
 }
@@ -298,7 +308,7 @@ tabs.forEach(t => t.addEventListener('click', (e)=>{
   showTab(e.currentTarget.dataset.tab);
 }));
 
-function toast(msg){ const el=document.getElementById('toast'); el.textContent=msg||'Hotovo'; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'), 1200); }
+function toast(msg){ const el=document.getElementById('toast'); el.textContent=msg||'Hotovo'; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'), 1400); }
 
 // Calc core
 function last4Digits(n){ return Math.abs(n) % 10000; }
@@ -312,8 +322,9 @@ document.getElementById('todayBtn').addEventListener('click', ()=>{ const t=new 
 
 // Copy/share bindings
 document.addEventListener('click', (e)=>{
-  const sel=e.target.getAttribute('data-copy'); 
-  if(sel){
+  const trg = e.target.closest('[data-copy]'); 
+  if(trg){
+    const sel=trg.getAttribute('data-copy'); 
     const el=document.querySelector(sel); 
     if(el){ copyText(el.textContent.trim()); }
   }
@@ -368,14 +379,19 @@ document.getElementById('r-print').addEventListener('click', ()=>{
   w.document.close(); 
 });
 
-// Customers panel
-function loadCustomers(){ try{return JSON.parse(localStorage.getItem(LS_KEYS.customers))||[]}catch{return[]} }
-function saveCustomers(list){ localStorage.setItem(LS_KEYS.customers, JSON.stringify(list)); }
+// Customers panel — safe storage and robust events
+function loadCustomers(){ 
+  try{ const raw=Store.getItem(LS_KEYS.customers); return raw? JSON.parse(raw) : []; }catch(e){ toast('Chyba čtení zákazníků'); return []; } 
+}
+function saveCustomers(list){ 
+  try{ Store.setItem(LS_KEYS.customers, JSON.stringify(list)); return true; } 
+  catch(e){ toast('Uložení selhalo'); return false; }
+}
 function uuid(){ return Math.random().toString(36).slice(2)+Date.now().toString(36); }
 
 (function ensureSeed(){
   try{
-    if (localStorage.getItem(LS_KEYS.customers) === null) {
+    if (Store.getItem(LS_KEYS.customers) === null) {
       const seed=[{id:uuid(),name:"ArianeGroup Vernon",note:"FR – RS1",machines:[{id:uuid(),label:"Hermle C42U",number:31997},{id:uuid(),label:"RS1 #2",number:42015}]},{id:uuid(),name:"Morava Cast Prostějov",note:"CZ – C32 + HS flex",machines:[{id:uuid(),label:"Hermle C32U",number:31888}]}];
       saveCustomers(seed);
     }
@@ -398,9 +414,9 @@ function renderCustomers(filter=""){
              <div style="opacity:.9;font-size:.95rem">${c.note||""}</div>
            </div>
            <div style="display:flex;gap:8px;flex-wrap:wrap">
-             <button class="btn inline" data-act="edit-c" data-id="${c.id}">Upravit</button>
-             <button class="btn inline" data-act="add-m" data-id="${c.id}">+ Stroj</button>
-             <button class="btn inline" data-act="del-c" data-id="${c.id}">Smazat</button>
+             <button class="btn inline" data-act="edit-c" data-id="${c.id}" type="button">Upravit</button>
+             <button class="btn inline" data-act="add-m" data-id="${c.id}" type="button">+ Stroj</button>
+             <button class="btn inline" data-act="del-c" data-id="${c.id}" type="button">Smazat</button>
            </div>
          </div>`
         + (c.machines||[]).map(m=>`
@@ -408,9 +424,9 @@ function renderCustomers(filter=""){
             <div class="col" style="min-width:120px"><b>${m.label||""}</b></div>
             <div class="col" style="min-width:120px">N: ${m.number||""}</div>
             <div class="col" style="min-width:220px;display:flex;gap:8px;flex-wrap:wrap">
-              <button class="btn inline" data-act="use-m" data-cid="${c.id}" data-mid="${m.id}">Použít</button>
-              <button class="btn inline" data-act="edit-m" data-cid="${c.id}" data-mid="${m.id}">Upravit</button>
-              <button class="btn inline" data-act="del-m" data-cid="${c.id}" data-mid="${m.id}">Smazat</button>
+              <button class="btn inline" data-act="use-m" data-cid="${c.id}" data-mid="${m.id}" type="button">Použít</button>
+              <button class="btn inline" data-act="edit-m" data-cid="${c.id}" data-mid="${m.id}" type="button">Upravit</button>
+              <button class="btn inline" data-act="del-m" data-cid="${c.id}" data-mid="${m.id}" type="button">Smazat</button>
             </div>
           </div>`).join('');
       root.appendChild(box);
@@ -431,11 +447,81 @@ function openDialog(title, innerHTML, onSave){
   clientsDlg.showModal();
 }
 
-// Settings — PIN management
+// Add customer
+document.getElementById('c-add').addEventListener('click', ()=>{
+  openDialog("Přidat zákazníka", `<label>Název</label><input id="f-name"><label>Poznámka</label><input id="f-note">`, (close)=>{
+    const name=document.getElementById('f-name').value.trim();
+    if(!name){ toast('Zadejte název'); return; }
+    const list=loadCustomers();
+    list.push({id:uuid(), name, note:(document.getElementById('f-note').value||'').trim(), machines:[]});
+    if(saveCustomers(list)){ renderCustomers(document.getElementById('c-search').value); close(); toast("Uloženo"); }
+  });
+});
+
+// Export customers
+document.getElementById('c-export').addEventListener('click', ()=>{
+  const data = JSON.stringify(loadCustomers(), null, 2);
+  const blob = new Blob([data], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'customers.json';
+  document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+});
+
+// Import customers
+document.getElementById('c-import-file').addEventListener('change', (e)=>{
+  const file = e.target.files && e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = (ev)=>{
+    try{
+      const incoming = JSON.parse(ev.target.result);
+      if(!Array.isArray(incoming)) throw new Error('Neplatný formát');
+      const list = incoming.map(c=>({
+        id: c.id || uuid(),
+        name: String(c.name||'').trim(),
+        note: String(c.note||'').trim(),
+        machines: Array.isArray(c.machines) ? c.machines.map(m=>({
+          id: m.id || uuid(),
+          label: String(m.label||'').trim(),
+          number: m.number ? parseInt(m.number,10) : null
+        })) : []
+      }));
+      if(saveCustomers(list)){ renderCustomers(document.getElementById('c-search').value); toast('Import hotov'); }
+    }catch(err){ alert('Import selhal: ' + err.message); }
+    e.target.value = '';
+  };
+  reader.readAsText(file);
+});
+
+// Delegated actions (robust)
+document.getElementById('c-list').addEventListener('click',(e)=>{
+  const trg = e.target.closest('[data-act]'); if(!trg) return;
+  const act=trg.getAttribute('data-act'); const list=loadCustomers();
+  if(act==='del-c'){ const id=trg.getAttribute('data-id'); if(!confirm('Opravdu smazat zákazníka?')) return; if(saveCustomers(list.filter(c=>c.id!==id))){ renderCustomers(document.getElementById('c-search').value); toast("Smazáno"); } return; }
+  if(act==='edit-c'){ const id=trg.getAttribute('data-id'); const c=list.find(x=>x.id===id);
+    openDialog("Upravit zákazníka", `<label>Název</label><input id="f-name" value="${c.name}"><label>Poznámka</label><input id="f-note" value="${c.note||""}">`, (close)=>{
+      c.name=document.getElementById('f-name').value.trim(); c.note=document.getElementById('f-note').value.trim(); if(saveCustomers(list)){ renderCustomers(document.getElementById('c-search').value); close(); toast("Uloženo"); }
+    }); return; }
+  if(act==='add-m'){ const id=trg.getAttribute('data-id'); const c=list.find(x=>x.id===id);
+    openDialog("Přidat stroj", `<label>Název stroje</label><input id="f-label"><label>Číslo (N)</label><input id="f-number" type="number" inputmode="numeric">`, (close)=>{
+      c.machines=c.machines||[]; c.machines.push({id:uuid(), label:(document.getElementById('f-label').value||'').trim(), number: parseInt(document.getElementById('f-number').value||'0',10)});
+      if(saveCustomers(list)){ renderCustomers(document.getElementById('c-search').value); close(); toast("Uloženo"); }
+    }); return; }
+  if(act==='del-m'){ const cid=trg.getAttribute('data-cid'); const mid=trg.getAttribute('data-mid'); const c=list.find(x=>x.id===cid); if(!confirm('Opravdu smazat stroj?')) return; c.machines=(c.machines||[]).filter(m=>m.id!==mid); if(saveCustomers(list)){ renderCustomers(document.getElementById('c-search').value); toast("Smazáno"); } return; }
+  if(act==='edit-m'){ const cid=trg.getAttribute('data-cid'); const mid=trg.getAttribute('data-mid'); const c=list.find(x=>x.id===cid); const m=(c.machines||[]).find(x=>x.id===mid);
+    openDialog("Upravit stroj", `<label>Název stroje</label><input id="f-label" value="${m.label||""}"><label>Číslo (N)</label><input id="f-number" type="number" inputmode="numeric" value="${m.number||""}">`, (close)=>{
+      m.label=(document.getElementById('f-label').value||'').trim(); m.number=parseInt(document.getElementById('f-number').value||'0',10); if(saveCustomers(list)){ renderCustomers(document.getElementById('c-search').value); close(); toast("Uloženo"); }
+    }); return; }
+  if(act==='use-m'){ const cid=trg.getAttribute('data-cid'); const mid=trg.getAttribute('data-mid'); const c=list.find(x=>x.id===cid); const m=(c.machines||[]).find(x=>x.id===mid);
+    if(m&&m.number){ document.getElementById('machine').value=m.number; tabs.forEach(x=>x.classList.remove('active')); document.querySelector('.tab[data-tab="single"]').classList.add('active'); showTab('single'); toast("Vyplněno do výpočtu"); } return; }
+});
+
+// Settings — PIN, Logout
 function ownerAuthed(){ 
   try{ 
     if (sessionStorage.getItem(SS_KEYS.ownerSession) === '1') return true;
-    if (localStorage.getItem(LS_KEYS.ownerDev) === SECURITY.ownerHash) return true;
+    if (Store.getItem(LS_KEYS.ownerDev) === SECURITY.ownerHash) return true;
   }catch(e){}
   return false;
 }
@@ -464,7 +550,7 @@ document.getElementById('pin-gen').addEventListener('click', async ()=>{
   if(!ownerAuthed()){ toast('Tato akce vyžaduje odemknutí hlavním kódem'); return; }
   const pin = randomPin(); const hash = await sha256Hex(pin); const exp = Date.now() + 24*60*60*1000;
   SECURITY.tempPinHash = hash; SECURITY.tempPinExpires = exp;
-  try{ localStorage.setItem(LS_KEYS.pinHash, hash); localStorage.setItem(LS_KEYS.pinExp, String(exp)); }catch(e){}
+  try{ Store.setItem(LS_KEYS.pinHash, hash); Store.setItem(LS_KEYS.pinExp, String(exp)); }catch(e){}
   updatePinInfo();
   pinShow.textContent = pin; pinExpEl.textContent = "Platnost do: " + new Date(exp).toLocaleString('cs-CZ');
   pinDlg.showModal();
@@ -472,11 +558,10 @@ document.getElementById('pin-gen').addEventListener('click', async ()=>{
 document.getElementById('pin-revoke').addEventListener('click', ()=>{
   if(!ownerAuthed()){ toast('Tato akce vyžaduje odemknutí hlavním kódem'); return; }
   SECURITY.tempPinHash=null; SECURITY.tempPinExpires=0;
-  try{ localStorage.removeItem(LS_KEYS.pinHash); localStorage.removeItem(LS_KEYS.pinExp); }catch(e){}
+  try{ Store.removeItem(LS_KEYS.pinHash); Store.removeItem(LS_KEYS.pinExp); }catch(e){}
   updatePinInfo(); toast('PIN zrušen');
 });
 
-// Logout UI
 const logoutDlg=document.getElementById('logoutDlg');
 document.getElementById('logoutBtn').addEventListener('click', ()=> logoutDlg.showModal());
 document.getElementById('logoutConfirm').addEventListener('click', (e)=>{
@@ -484,9 +569,9 @@ document.getElementById('logoutConfirm').addEventListener('click', (e)=>{
   try{ sessionStorage.removeItem(SS_KEYS.ownerSession); }catch(e){}
   const forget = document.getElementById('forgetDev').checked;
   const revoke = document.getElementById('revokePinOnLogout').checked;
-  if (forget) { try{ localStorage.removeItem(LS_KEYS.ownerDev); }catch(e){} }
+  if (forget) { try{ Store.removeItem(LS_KEYS.ownerDev); }catch(e){} }
   if (revoke) { 
-    try{ localStorage.removeItem(LS_KEYS.pinHash); localStorage.removeItem(LS_KEYS.pinExp); }catch(e){}
+    try{ Store.removeItem(LS_KEYS.pinHash); Store.removeItem(LS_KEYS.pinExp); }catch(e){}
     SECURITY.tempPinHash=null; SECURITY.tempPinExpires=0;
   }
   logoutDlg.close();
