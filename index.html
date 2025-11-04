@@ -49,6 +49,50 @@
     .modal-b { padding:16px }
     .modal-f { padding:12px 16px; border-top:1px solid var(--border); display:flex; gap:8px; justify-content:flex-end }
   </style>
+<style id="mobile-override">
+
+/* === HDH CODE v2.8.0 — Mobile/Black Text Override (iPhone 13 Pro Max friendly) === */
+:root{ --radius:18px; }
+html, body { color:#000 !important; }
+.logo img{ width:120px !important; height:auto !important; }
+label{ font-size:.95rem !important; color:#000 !important; }
+.label{ color:#000 !important; font-size:.85rem !important; letter-spacing:.1px !important; }
+.value{ font-size: clamp(1.0rem, 4vw, 1.12rem) !important; }
+.footer{ color:#000 !important; font-size:.9rem !important; }
+.btn, .btn *{ color:#000 !important; }
+.btn.primary{ color:#000 !important; /* keep bg as-is, only text black */ }
+.tabs{ gap:6px !important; margin-bottom:6px !important; }
+.tab{ padding:8px 10px !important; font-size:.95rem !important; }
+.wrap{ max-width:520px !important; padding:8px !important; }
+.card{ padding:10px !important; border-radius:18px !important; }
+.row{ gap:6px !important; }
+.col{ min-width: 210px !important; }
+input[type="date"], input[type="number"], input[type="password"], input[type="text"], input[type="file"]{
+  padding:10px 12px !important;
+  border-radius:12px !important;
+  color:#000 !important;
+}
+.actions, .bar{ grid-template-columns:1fr 1fr !important; gap:8px !important; margin-top:8px !important; }
+.list{ margin-top:8px !important; border-radius:14px !important; }
+.row-item{ grid-template-columns: 1fr auto auto !important; padding:8px !important; }
+.copy{ padding:7px 10px !important; border-radius:10px !important; }
+.toast{ bottom: calc(14px + env(safe-area-inset-bottom)) !important; }
+
+/* Make everything fit on one screen most of the time */
+@media (max-width: 430px){
+  .wrap{ max-width: 420px !important; padding:8px !important; }
+  .logo img{ width:108px !important; }
+  .tab{ padding:7px 9px !important; font-size:.9rem !important; }
+  .value{ font-size: clamp(0.98rem, 4.2vw, 1.08rem) !important; }
+  .label{ font-size:.82rem !important; }
+  .footer{ font-size:.85rem !important; }
+  .card{ padding:10px !important; }
+  .row{ gap:6px !important; }
+  .row-item{ padding:8px !important; }
+}
+/* END override */
+
+</style>
 </head>
 <body>
 
